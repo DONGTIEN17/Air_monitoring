@@ -1,0 +1,8 @@
+adafruit/DHT sensor library@^1.4.6
+adafruit/Adafruit GFX Library@^1.12.4
+adafruit/Adafruit BME680 Library@^2.0.5
+bblanchon/ArduinoJson@^7.4.2
+knolleary/PubSubClient@^2.8
+boschsensortec/BSEC Software Library@^1.8.1492
+mikalhart/TinyGPSPlus@^1.1.0
+adafruit/Adafruit PM25 AQI Sensor@^2.0.0
