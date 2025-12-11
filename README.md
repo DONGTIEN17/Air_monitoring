@@ -96,15 +96,58 @@ Users can set thresholds and receive notifications for environmental hazards.
 ## AI model
 
 In this project I used LSTM model to predict the AQI in next hours.
+
+Here is the compare table between real index and predicted index
 ![Here is the compare table between real index and predicted index](images/chart_real_pred.png)
 ![Evaluation](images/Evaluate_index.png)
 
 ## Block Diagram 
-
+1. Block Diagram
 ![1. Block Diagram](images/Block_Diagram.png)
-![2. Algorithm Flow Chart](Images/Algorithm_Flow_Chart.png)
+2. Algorithm Flow Chart
+![2. Algorithm Flow Chart](images/Algorithm_Flow_Chart.png)
 ## Pin Diagram
-![3. Pin Diagram](images/PIN_Diagram.png)
+3. Pin Diagram
+![3. Pin Diagram](images/Pin_Diagram.png)
 
 ## Result
+1. Model:
+![1. Model:](images/Model.jpg)
+2. Node-red dashboard 2.0 :
+
+. The Node-red dashboard consists of 7 Tabs: Home, Air Quality Collected, Particulate Matter Indicators, Weather, Air Purifier, Location of Monitor, Another Web.
+![Tabs](images,Tabs.png)
+
+.The Home interface displays AQI, IAQ, Temperature and Humidity and give the thresholds alert.
+![Home](images,Home.png)
+
+. The Particulate Matter Indicators displays 3 types of PM : PM1, PM2.5, PM10 collected that time.
+![PM](images,Particulate_Matter.png)
+
+. The Weather displays Temperature, Humidity, Pressure readings, along with historical data over time.
+![Weather](images,Weather.png)
+
+. The Air Purifier to turn on/off if the air is poluted
+![Air](images,Air_purifier.png)
+
+. The Location of Monitor 
+![GPS](images,GPS.png)
+
+. The Another Web helps people compare the air quality index at their home with other locations.
+
+
+## Conclusion
+. Air Monitoring system has been successfully developed with the following features:
+
+  Collects data from sensors
+
+  Provides warnings to users through a blinking LED
+
+  Successfully uses an AI model to predict AQI with high accuracy
+
+  Includes a database suitable for various applications
+
+
+. The MQTT protocol has been successfully implemented to transmit and receive data between system components via brokers like HiveMQ or EMQX.
+
 
