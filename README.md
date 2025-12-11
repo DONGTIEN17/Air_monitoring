@@ -40,58 +40,60 @@ _Cables + Power Source	—	For wiring and powering the system.
 
 #### Node-RED Dashboard
 
-Visualization: Displays real-time data for PM1, PM2.5, PM10, Temperature, Humidity, Pressure, location of monitor, AQI, IAQ .
+_Visualization: Displays real-time data for PM1, PM2.5, PM10, Temperature, Humidity, Pressure, location of monitor, AQI, IAQ .
 
-Management: Set alert thresholds, control system status, and monitor historical data.
+_Management: Set alert thresholds, control system status, and monitor historical data.
 
-Safety Monitoring: Receive alerts for high pollution levels, toxic gases, and abnormal temperature or humidity.
+_Safety Monitoring: Receive alerts for high pollution levels, toxic gases, and abnormal temperature or humidity.
 
 #### MQTT Broker
 
-EMQX used for real-time data transmission.
+_EMQX used for real-time data transmission.
 
-ESP32 publishes sensor data to the broker.
+_ESP32 publishes sensor data to the broker.
 
-Node-RED subscribes to this data and updates the dashboard accordingly.
+_Node-RED subscribes to this data and updates the dashboard accordingly.
 
-Virtual machine subcribes and publishes value
+_Virtual machine subcribes and publishes value
 
 #### Development Environment
 
-PlatformIO with VS Code.
+_PlatformIO with VS Code.
 
-Virtual Machine (VMWare or Install on your window)
+_Virtual Machine (VMWare or Install on your window)
+
+_Google Colab to train model
 
 
 #### System Concept
 
 Data Collection:
 
-PMS5003 measures particulate matter (PM2.5, PM10).
+_PMS5003 measures particulate matter (PM2.5, PM10).
 
-BME680 captures temperature, humidity, pressure, and VOC levels.
+_BME680 captures temperature, humidity, pressure, and VOC levels.
 
-GPS module provides location coordinates.
+_GPS module provides location coordinates.
 
 Local Processing:
 
-The ESP32 processes sensor data, checks against thresholds, and updates the OLED display.
+_The ESP32 processes sensor data, checks against thresholds, and updates the OLED display.
 
-The LED indicator provides a visual warning when air quality falls below safe levels.
+_The LED indicator provides a visual warning when air quality falls below safe levels.
 
 Cloud Communication:
 
-ESP32 sends data to the MQTT broker.
+_ESP32 sends data to the MQTT broker.
 
-Node-RED retrieves and visualizes this data on the dashboard.
+_Node-RED retrieves and visualizes this data on the dashboard.
 
-Virtual Machine subcribes and publishes to predict the AQI
+_Virtual Machine subcribes and publishes to broker to predict the AQI
 
 Visualization & Alerts:
 
-The dashboard shows real-time data and alerts for any abnormal conditions.
+_The dashboard shows real-time data and alerts for any abnormal conditions.
 
-Users can set thresholds and receive notifications for environmental hazards.
+_Users can set thresholds and receive notifications for environmental hazards.
 
 ## AI model
 
