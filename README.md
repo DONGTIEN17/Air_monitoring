@@ -152,4 +152,7 @@ Here is the compare table between real index and predicted index
 
 . The MQTT protocol has been successfully implemented to transmit and receive data between system components via brokers like HiveMQ or EMQX.
 
+# Video Demo
+Link gg Drive : https://drive.google.com/file/d/1JtE_UMB9cyV8rW0lYHocKMN55pcUekPe/view?usp=sharing
+
 
