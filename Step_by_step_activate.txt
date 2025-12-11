@@ -1,0 +1,8 @@
+# Create a virt machine 
+python -m venv venv
+
+# Activate virt machine
+.\venv\Scripts\activate
+
+# Create a file called "requirements.txt" to install all libraries
+ (venv) D:\<Your_Project_Folder>\> pip install -r requirements.txt

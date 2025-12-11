@@ -1,0 +1,11 @@
+# Thư viện Machine Learning và xử lý dữ liệu
+tensorflow
+numpy
+scikit-learn
+joblib
+
+# Thư viện MQTT
+paho-mqtt
+
+# Các thư viện bổ sung có thể cần thiết cho việc xử lý cấu hình/thời gian
+# Dành cho các module tích hợp sẵn: json, time, ssl, sys, collections không cần liệt kê
