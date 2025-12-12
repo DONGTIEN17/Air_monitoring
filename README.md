@@ -163,7 +163,7 @@ And here is the model evaluation, showing the performance metrics used to valida
 
   Collects data from sensors
 
-  Provides warnings to users through a blinking LED
+  Provides warnings to users 
 
   Successfully uses an AI model to predict AQI with high accuracy
 
