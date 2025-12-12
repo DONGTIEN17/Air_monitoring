@@ -1,0 +1,1591 @@
+[
+    {
+        "id": "e203cefce8c3b070",
+        "type": "tab",
+        "label": "Flow 1",
+        "disabled": false,
+        "info": "",
+        "env": []
+    },
+    {
+        "id": "d45fb8800a9c8e8b",
+        "type": "ui_base",
+        "theme": {
+            "name": "theme-custom",
+            "lightTheme": {
+                "default": "#0094CE",
+                "baseColor": "#0094CE",
+                "baseFont": "-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Oxygen-Sans,Ubuntu,Cantarell,Helvetica Neue,sans-serif",
+                "edited": true,
+                "reset": false
+            },
+            "darkTheme": {
+                "default": "#097479",
+                "baseColor": "#097479",
+                "baseFont": "-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Oxygen-Sans,Ubuntu,Cantarell,Helvetica Neue,sans-serif",
+                "edited": true,
+                "reset": false
+            },
+            "customTheme": {
+                "name": "Untitled Theme 1",
+                "default": "#4B7930",
+                "baseColor": "#ededed",
+                "baseFont": "-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Oxygen-Sans,Ubuntu,Cantarell,Helvetica Neue,sans-serif",
+                "reset": false
+            },
+            "themeState": {
+                "base-color": {
+                    "default": "#4B7930",
+                    "value": "#ededed",
+                    "edited": true
+                },
+                "page-titlebar-backgroundColor": {
+                    "value": "#5ac421",
+                    "edited": true
+                },
+                "page-backgroundColor": {
+                    "value": "#e1efe5",
+                    "edited": true
+                },
+                "page-sidebar-backgroundColor": {
+                    "value": "#c5f7c5",
+                    "edited": true
+                },
+                "group-textColor": {
+                    "value": "#0c0d0c",
+                    "edited": true
+                },
+                "group-borderColor": {
+                    "value": "#7e7c7c",
+                    "edited": true
+                },
+                "group-backgroundColor": {
+                    "value": "#ffffff",
+                    "edited": false
+                },
+                "widget-textColor": {
+                    "value": "#111111",
+                    "edited": false
+                },
+                "widget-backgroundColor": {
+                    "value": "#d72323",
+                    "edited": true
+                },
+                "widget-borderColor": {
+                    "value": "#ffffff",
+                    "edited": false
+                },
+                "base-font": {
+                    "value": "-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Oxygen-Sans,Ubuntu,Cantarell,Helvetica Neue,sans-serif"
+                }
+            },
+            "angularTheme": {
+                "primary": "indigo",
+                "accents": "blue",
+                "warn": "red",
+                "background": "grey",
+                "palette": "light"
+            }
+        },
+        "site": {
+            "name": "Air Monitoring Station",
+            "hideToolbar": "false",
+            "allowSwipe": "true",
+            "lockMenu": "true",
+            "allowTempTheme": "false",
+            "dateFormat": "DD/MM/YYYY",
+            "sizes": {
+                "sx": 48,
+                "sy": 48,
+                "gx": 6,
+                "gy": 6,
+                "cx": 6,
+                "cy": 6,
+                "px": 0,
+                "py": 0
+            }
+        }
+    },
+    {
+        "id": "fa03dc7ed0b8030b",
+        "type": "ui_tab",
+        "name": "Particulate Matter Indicators",
+        "icon": "dashboard",
+        "order": 3,
+        "disabled": false,
+        "hidden": false
+    },
+    {
+        "id": "f2d396ef79af5c84",
+        "type": "ui_group",
+        "name": "Group 1",
+        "tab": "",
+        "order": 1,
+        "disp": true,
+        "width": "12",
+        "collapse": false,
+        "className": ""
+    },
+    {
+        "id": "0b33094fb085500a",
+        "type": "mqtt-broker",
+        "name": "",
+        "broker": "ye004827.ala.asia-southeast1.emqxsl.com",
+        "port": "8883",
+        "tls": "",
+        "clientid": "Node_red_dashboard_1",
+        "autoConnect": true,
+        "usetls": true,
+        "protocolVersion": 4,
+        "keepalive": 60,
+        "cleansession": true,
+        "autoUnsubscribe": true,
+        "birthTopic": "status/nodered/online",
+        "birthQos": "1",
+        "birthRetain": "true",
+        "birthPayload": "Online",
+        "birthMsg": {},
+        "closeTopic": "",
+        "closeQos": "1",
+        "closeRetain": "true",
+        "closePayload": "",
+        "closeMsg": {},
+        "willTopic": "status/nodered/online",
+        "willQos": "1",
+        "willRetain": "true",
+        "willPayload": "Offline",
+        "willMsg": {},
+        "userProps": "",
+        "sessionExpiry": ""
+    },
+    {
+        "id": "7222ab2d8d417474",
+        "type": "ui_group",
+        "name": "PMS5003_PM1.0",
+        "tab": "fa03dc7ed0b8030b",
+        "order": 1,
+        "disp": true,
+        "width": "7",
+        "collapse": false,
+        "className": ""
+    },
+    {
+        "id": "7bd3a11f2647d87e",
+        "type": "mqtt-broker",
+        "name": "",
+        "broker": "pc8108cb.ala.asia-southeast1.emqxsl.com",
+        "port": "8883",
+        "tls": "",
+        "clientid": "",
+        "autoConnect": true,
+        "usetls": true,
+        "protocolVersion": 4,
+        "keepalive": 60,
+        "cleansession": true,
+        "autoUnsubscribe": true,
+        "birthTopic": "",
+        "birthQos": "0",
+        "birthRetain": "false",
+        "birthPayload": "",
+        "birthMsg": {},
+        "closeTopic": "",
+        "closeQos": "0",
+        "closeRetain": "false",
+        "closePayload": "",
+        "closeMsg": {},
+        "willTopic": "",
+        "willQos": "0",
+        "willRetain": "false",
+        "willPayload": "",
+        "willMsg": {},
+        "userProps": "",
+        "sessionExpiry": ""
+    },
+    {
+        "id": "a4fcf0eb3c0dedae",
+        "type": "ui_spacer",
+        "z": "e203cefce8c3b070",
+        "name": "spacer",
+        "group": "",
+        "order": 3,
+        "width": 1,
+        "height": 1
+    },
+    {
+        "id": "16df5ec005f2ef96",
+        "type": "ui_group",
+        "name": "PMS5003_PM2.5",
+        "tab": "fa03dc7ed0b8030b",
+        "order": 2,
+        "disp": true,
+        "width": "7",
+        "collapse": false,
+        "className": ""
+    },
+    {
+        "id": "238d0f46078f361a",
+        "type": "ui_group",
+        "name": "PMS5003_PM10",
+        "tab": "fa03dc7ed0b8030b",
+        "order": 3,
+        "disp": true,
+        "width": "7",
+        "collapse": false,
+        "className": ""
+    },
+    {
+        "id": "adca9e11b0fbe354",
+        "type": "ui_tab",
+        "name": "Weather",
+        "icon": "dashboard",
+        "order": 4,
+        "disabled": false,
+        "hidden": false
+    },
+    {
+        "id": "f46fe29bd8290864",
+        "type": "ui_group",
+        "name": "BME680_Temp",
+        "tab": "adca9e11b0fbe354",
+        "order": 1,
+        "disp": true,
+        "width": "7",
+        "collapse": false,
+        "className": ""
+    },
+    {
+        "id": "ad954e2854652855",
+        "type": "ui_group",
+        "name": "BME680_Humid",
+        "tab": "adca9e11b0fbe354",
+        "order": 2,
+        "disp": true,
+        "width": "7",
+        "collapse": false,
+        "className": ""
+    },
+    {
+        "id": "d28861352b62a5e5",
+        "type": "ui_group",
+        "name": "BME680_Pres",
+        "tab": "adca9e11b0fbe354",
+        "order": 3,
+        "disp": true,
+        "width": "7",
+        "collapse": false,
+        "className": ""
+    },
+    {
+        "id": "3fbbcc35dfb9072a",
+        "type": "ui_tab",
+        "name": "Air Quality Collected",
+        "icon": "dashboard",
+        "order": 2,
+        "disabled": false,
+        "hidden": false
+    },
+    {
+        "id": "d33b9d69f65462e8",
+        "type": "ui_group",
+        "name": "Air Quality Index",
+        "tab": "3fbbcc35dfb9072a",
+        "order": 1,
+        "disp": true,
+        "width": "7",
+        "collapse": false,
+        "className": ""
+    },
+    {
+        "id": "7c679d9eb8fb1b5c",
+        "type": "ui_group",
+        "name": "Indoor Air Quality",
+        "tab": "3fbbcc35dfb9072a",
+        "order": 2,
+        "disp": true,
+        "width": "7",
+        "collapse": false,
+        "className": ""
+    },
+    {
+        "id": "25f7a37bab43aa63",
+        "type": "ui_group",
+        "name": "AQI Predicted next Hours",
+        "tab": "3fbbcc35dfb9072a",
+        "order": 3,
+        "disp": true,
+        "width": "7",
+        "collapse": false,
+        "className": ""
+    },
+    {
+        "id": "a1b8778ad05a2d3d",
+        "type": "ui_tab",
+        "name": "Home",
+        "icon": "dashboard",
+        "order": 1,
+        "disabled": false,
+        "hidden": false
+    },
+    {
+        "id": "25c46b65a85683a8",
+        "type": "ui_group",
+        "name": "Indoor Air Quality (IAQ)",
+        "tab": "a1b8778ad05a2d3d",
+        "order": 2,
+        "disp": true,
+        "width": "6",
+        "collapse": false,
+        "className": ""
+    },
+    {
+        "id": "2653ad7cb30820ee",
+        "type": "ui_link",
+        "name": "Another Web ",
+        "link": "https://www.iqair.cn/cn-en/vietnam/hanoi/hanoi",
+        "icon": "open_in_browser",
+        "target": "newtab",
+        "order": 7
+    },
+    {
+        "id": "badf941426905123",
+        "type": "ui_group",
+        "name": "Air Quality Index (AQI)",
+        "tab": "a1b8778ad05a2d3d",
+        "order": 1,
+        "disp": true,
+        "width": "10",
+        "collapse": false,
+        "className": ""
+    },
+    {
+        "id": "4b65706c5618c7b0",
+        "type": "ui_group",
+        "name": "Air Quality Index Predict",
+        "tab": "a1b8778ad05a2d3d",
+        "order": 3,
+        "disp": true,
+        "width": 6,
+        "collapse": false,
+        "className": ""
+    },
+    {
+        "id": "1014299770f68307",
+        "type": "ui_tab",
+        "name": "Location of Monitor",
+        "icon": "dashboard",
+        "order": 6,
+        "disabled": false,
+        "hidden": false
+    },
+    {
+        "id": "7fd56bf8be8ac531",
+        "type": "ui_group",
+        "name": "Air Quality Monitoring Station Location",
+        "tab": "1014299770f68307",
+        "order": 1,
+        "disp": true,
+        "width": "18",
+        "collapse": false,
+        "className": ""
+    },
+    {
+        "id": "2fb89e6d793e9a6f",
+        "type": "ui_tab",
+        "name": "Air Purifier",
+        "icon": "dashboard",
+        "order": 5,
+        "disabled": false,
+        "hidden": false
+    },
+    {
+        "id": "bec4509481718ea7",
+        "type": "ui_group",
+        "name": "Air Purifier",
+        "tab": "2fb89e6d793e9a6f",
+        "order": 1,
+        "disp": true,
+        "width": "22",
+        "collapse": false,
+        "className": ""
+    },
+    {
+        "id": "1c7032fc9852878f",
+        "type": "ui_group",
+        "name": "Group 2",
+        "tab": "",
+        "order": 2,
+        "disp": true,
+        "width": 6
+    },
+    {
+        "id": "736e88ed00efc251",
+        "type": "mqtt in",
+        "z": "e203cefce8c3b070",
+        "name": "",
+        "topic": "airmonitoring/pm1",
+        "qos": "1",
+        "datatype": "auto-detect",
+        "broker": "0b33094fb085500a",
+        "nl": false,
+        "rap": true,
+        "rh": 0,
+        "inputs": 0,
+        "x": 170,
+        "y": 80,
+        "wires": [
+            [
+                "60e23e067b5abe3d",
+                "b87225c0794289b4"
+            ]
+        ]
+    },
+    {
+        "id": "72dc51fde3d31e85",
+        "type": "mqtt out",
+        "z": "e203cefce8c3b070",
+        "name": "",
+        "topic": "airmonitoring/air_filter",
+        "qos": "1",
+        "retain": "",
+        "respTopic": "",
+        "contentType": "",
+        "userProps": "",
+        "correl": "",
+        "expiry": "",
+        "broker": "0b33094fb085500a",
+        "x": 800,
+        "y": 1060,
+        "wires": []
+    },
+    {
+        "id": "3c462a24ae2ef8ec",
+        "type": "mqtt in",
+        "z": "e203cefce8c3b070",
+        "name": "",
+        "topic": "aqi/predicted",
+        "qos": "1",
+        "datatype": "auto",
+        "broker": "0b33094fb085500a",
+        "nl": false,
+        "rap": true,
+        "rh": 0,
+        "inputs": 0,
+        "x": 130,
+        "y": 880,
+        "wires": [
+            [
+                "d8cb0c8dacc1ad5c"
+            ]
+        ]
+    },
+    {
+        "id": "c911523d180c114d",
+        "type": "function",
+        "z": "e203cefce8c3b070",
+        "name": "function 1",
+        "func": "msg.payload = msg.payload.aqi_predicted ;\nreturn msg;\n",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 460,
+        "y": 880,
+        "wires": [
+            [
+                "14c7c457c3892266",
+                "08289d4235991320",
+                "b07c604349827d98"
+            ]
+        ]
+    },
+    {
+        "id": "d8cb0c8dacc1ad5c",
+        "type": "json",
+        "z": "e203cefce8c3b070",
+        "name": "",
+        "property": "payload",
+        "action": "",
+        "pretty": false,
+        "x": 310,
+        "y": 880,
+        "wires": [
+            [
+                "c911523d180c114d"
+            ]
+        ]
+    },
+    {
+        "id": "10eb6279f2cfd626",
+        "type": "mqtt in",
+        "z": "e203cefce8c3b070",
+        "name": "",
+        "topic": "airmonitoring/pm25",
+        "qos": "1",
+        "datatype": "auto-detect",
+        "broker": "0b33094fb085500a",
+        "nl": false,
+        "rap": true,
+        "rh": 0,
+        "inputs": 0,
+        "x": 630,
+        "y": 80,
+        "wires": [
+            [
+                "3a7bb8924bd8fd1f",
+                "2e3e39a33c7fdcd1"
+            ]
+        ]
+    },
+    {
+        "id": "fa0dfcecc03a492e",
+        "type": "mqtt in",
+        "z": "e203cefce8c3b070",
+        "name": "",
+        "topic": "airmonitoring/pm10",
+        "qos": "1",
+        "datatype": "auto-detect",
+        "broker": "0b33094fb085500a",
+        "nl": false,
+        "rap": true,
+        "rh": 0,
+        "inputs": 0,
+        "x": 170,
+        "y": 260,
+        "wires": [
+            [
+                "24d6d2c381c868fd",
+                "80cac93ae547c4a2"
+            ]
+        ]
+    },
+    {
+        "id": "d37ee990ba23389f",
+        "type": "mqtt in",
+        "z": "e203cefce8c3b070",
+        "name": "",
+        "topic": "airmonitoring/temperature",
+        "qos": "1",
+        "datatype": "auto-detect",
+        "broker": "0b33094fb085500a",
+        "nl": false,
+        "rap": true,
+        "rh": 0,
+        "inputs": 0,
+        "x": 610,
+        "y": 260,
+        "wires": [
+            [
+                "850608e5bfa67631",
+                "4d7eb0e55c255c5b"
+            ]
+        ]
+    },
+    {
+        "id": "3593db1f3005869c",
+        "type": "mqtt in",
+        "z": "e203cefce8c3b070",
+        "name": "",
+        "topic": "airmonitoring/humidity",
+        "qos": "1",
+        "datatype": "auto-detect",
+        "broker": "0b33094fb085500a",
+        "nl": false,
+        "rap": true,
+        "rh": 0,
+        "inputs": 0,
+        "x": 160,
+        "y": 420,
+        "wires": [
+            [
+                "f1b7cc9ae4108d57",
+                "b797e67284e77f17"
+            ]
+        ]
+    },
+    {
+        "id": "84bc0aa89656406c",
+        "type": "mqtt in",
+        "z": "e203cefce8c3b070",
+        "name": "",
+        "topic": "airmonitoring/pressure",
+        "qos": "1",
+        "datatype": "auto-detect",
+        "broker": "0b33094fb085500a",
+        "nl": false,
+        "rap": true,
+        "rh": 0,
+        "inputs": 0,
+        "x": 620,
+        "y": 420,
+        "wires": [
+            [
+                "a1fad584cbee4ba0",
+                "ef313139b14a05b8"
+            ]
+        ]
+    },
+    {
+        "id": "60e23e067b5abe3d",
+        "type": "ui_chart",
+        "z": "e203cefce8c3b070",
+        "name": "",
+        "group": "7222ab2d8d417474",
+        "order": 3,
+        "width": "0",
+        "height": "0",
+        "label": "PM1.0",
+        "chartType": "line",
+        "legend": "false",
+        "xformat": "HH:mm:ss",
+        "interpolate": "linear",
+        "nodata": "",
+        "dot": false,
+        "ymin": "0",
+        "ymax": "200",
+        "removeOlder": 1,
+        "removeOlderPoints": "",
+        "removeOlderUnit": "3600",
+        "cutout": 0,
+        "useOneColor": false,
+        "useUTC": false,
+        "colors": [
+            "#1f77b4",
+            "#aec7e8",
+            "#ff7f0e",
+            "#2ca02c",
+            "#98df8a",
+            "#d62728",
+            "#ff9896",
+            "#9467bd",
+            "#c5b0d5"
+        ],
+        "outputs": 1,
+        "useDifferentColor": false,
+        "className": "",
+        "x": 350,
+        "y": 120,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "b87225c0794289b4",
+        "type": "ui_gauge",
+        "z": "e203cefce8c3b070",
+        "name": "",
+        "group": "7222ab2d8d417474",
+        "order": 1,
+        "width": 0,
+        "height": 0,
+        "gtype": "wave",
+        "title": "PM1.0",
+        "label": "ug/m3",
+        "format": "{{value}}",
+        "min": 0,
+        "max": "150",
+        "colors": [
+            "#00b500",
+            "#e6e600",
+            "#ca3838"
+        ],
+        "seg1": "50",
+        "seg2": "100",
+        "diff": false,
+        "className": "",
+        "x": 370,
+        "y": 40,
+        "wires": []
+    },
+    {
+        "id": "2e3e39a33c7fdcd1",
+        "type": "ui_gauge",
+        "z": "e203cefce8c3b070",
+        "name": "",
+        "group": "16df5ec005f2ef96",
+        "order": 1,
+        "width": 0,
+        "height": 0,
+        "gtype": "wave",
+        "title": "PM2.5",
+        "label": "ug/m3",
+        "format": "{{value}}",
+        "min": 0,
+        "max": "200",
+        "colors": [
+            "#00b500",
+            "#e6e600",
+            "#ca3838"
+        ],
+        "seg1": "",
+        "seg2": "",
+        "diff": false,
+        "className": "",
+        "x": 850,
+        "y": 60,
+        "wires": []
+    },
+    {
+        "id": "3a7bb8924bd8fd1f",
+        "type": "ui_chart",
+        "z": "e203cefce8c3b070",
+        "name": "",
+        "group": "16df5ec005f2ef96",
+        "order": 0,
+        "width": 0,
+        "height": 0,
+        "label": "PM2.5",
+        "chartType": "line",
+        "legend": "false",
+        "xformat": "HH:mm:ss",
+        "interpolate": "linear",
+        "nodata": "",
+        "dot": false,
+        "ymin": "",
+        "ymax": "",
+        "removeOlder": 1,
+        "removeOlderPoints": "",
+        "removeOlderUnit": "3600",
+        "cutout": 0,
+        "useOneColor": false,
+        "useUTC": false,
+        "colors": [
+            "#1f77b4",
+            "#aec7e8",
+            "#ff7f0e",
+            "#2ca02c",
+            "#98df8a",
+            "#d62728",
+            "#ff9896",
+            "#9467bd",
+            "#c5b0d5"
+        ],
+        "outputs": 1,
+        "useDifferentColor": false,
+        "className": "",
+        "x": 850,
+        "y": 120,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "80cac93ae547c4a2",
+        "type": "ui_chart",
+        "z": "e203cefce8c3b070",
+        "name": "",
+        "group": "238d0f46078f361a",
+        "order": 2,
+        "width": 0,
+        "height": 0,
+        "label": "PM10",
+        "chartType": "line",
+        "legend": "false",
+        "xformat": "HH:mm:ss",
+        "interpolate": "linear",
+        "nodata": "",
+        "dot": false,
+        "ymin": "",
+        "ymax": "",
+        "removeOlder": 1,
+        "removeOlderPoints": "",
+        "removeOlderUnit": "3600",
+        "cutout": 0,
+        "useOneColor": false,
+        "useUTC": false,
+        "colors": [
+            "#1f77b4",
+            "#aec7e8",
+            "#ff7f0e",
+            "#2ca02c",
+            "#98df8a",
+            "#d62728",
+            "#ff9896",
+            "#9467bd",
+            "#c5b0d5"
+        ],
+        "outputs": 1,
+        "useDifferentColor": false,
+        "className": "",
+        "x": 350,
+        "y": 300,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "24d6d2c381c868fd",
+        "type": "ui_gauge",
+        "z": "e203cefce8c3b070",
+        "name": "",
+        "group": "238d0f46078f361a",
+        "order": 1,
+        "width": 0,
+        "height": 0,
+        "gtype": "wave",
+        "title": "PM10",
+        "label": "ug/m3",
+        "format": "{{value}}",
+        "min": 0,
+        "max": "200",
+        "colors": [
+            "#00b500",
+            "#e6e600",
+            "#ca3838"
+        ],
+        "seg1": "",
+        "seg2": "",
+        "diff": false,
+        "className": "",
+        "x": 350,
+        "y": 220,
+        "wires": []
+    },
+    {
+        "id": "850608e5bfa67631",
+        "type": "ui_chart",
+        "z": "e203cefce8c3b070",
+        "name": "",
+        "group": "f46fe29bd8290864",
+        "order": 0,
+        "width": 0,
+        "height": 0,
+        "label": "Temperature",
+        "chartType": "line",
+        "legend": "false",
+        "xformat": "HH:mm:ss",
+        "interpolate": "linear",
+        "nodata": "",
+        "dot": false,
+        "ymin": "",
+        "ymax": "",
+        "removeOlder": 1,
+        "removeOlderPoints": "",
+        "removeOlderUnit": "3600",
+        "cutout": 0,
+        "useOneColor": false,
+        "useUTC": false,
+        "colors": [
+            "#1f77b4",
+            "#aec7e8",
+            "#ff7f0e",
+            "#2ca02c",
+            "#98df8a",
+            "#d62728",
+            "#ff9896",
+            "#9467bd",
+            "#c5b0d5"
+        ],
+        "outputs": 1,
+        "useDifferentColor": false,
+        "className": "",
+        "x": 850,
+        "y": 300,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "4d7eb0e55c255c5b",
+        "type": "ui_gauge",
+        "z": "e203cefce8c3b070",
+        "name": "",
+        "group": "f46fe29bd8290864",
+        "order": 1,
+        "width": 0,
+        "height": 0,
+        "gtype": "gage",
+        "title": "Temperature",
+        "label": "oC",
+        "format": "{{value}}",
+        "min": 0,
+        "max": "100",
+        "colors": [
+            "#00b500",
+            "#e6e600",
+            "#ca3838"
+        ],
+        "seg1": "",
+        "seg2": "",
+        "diff": false,
+        "className": "",
+        "x": 850,
+        "y": 220,
+        "wires": []
+    },
+    {
+        "id": "623ee108fa3bf94e",
+        "type": "mqtt in",
+        "z": "e203cefce8c3b070",
+        "name": "",
+        "topic": "airmonitoring/iaq",
+        "qos": "1",
+        "datatype": "auto-detect",
+        "broker": "0b33094fb085500a",
+        "nl": false,
+        "rap": true,
+        "rh": 0,
+        "inputs": 0,
+        "x": 160,
+        "y": 600,
+        "wires": [
+            [
+                "0765c3ce2a969d12",
+                "551c736f7ded9086",
+                "8fd7d90c7c4af56b"
+            ]
+        ]
+    },
+    {
+        "id": "0765c3ce2a969d12",
+        "type": "ui_text",
+        "z": "e203cefce8c3b070",
+        "group": "7c679d9eb8fb1b5c",
+        "order": 2,
+        "width": 0,
+        "height": 0,
+        "name": "",
+        "label": "IAQ:",
+        "format": "{{msg.payload}}",
+        "layout": "row-center",
+        "className": "",
+        "style": true,
+        "font": "Times New Roman,Times,serif",
+        "fontSize": "30",
+        "color": "#000000",
+        "x": 330,
+        "y": 600,
+        "wires": []
+    },
+    {
+        "id": "f1b7cc9ae4108d57",
+        "type": "ui_gauge",
+        "z": "e203cefce8c3b070",
+        "name": "",
+        "group": "ad954e2854652855",
+        "order": 1,
+        "width": 0,
+        "height": 0,
+        "gtype": "gage",
+        "title": "Humidity",
+        "label": "%",
+        "format": "{{value}}",
+        "min": 0,
+        "max": "100",
+        "colors": [
+            "#00b500",
+            "#e6e600",
+            "#ca3838"
+        ],
+        "seg1": "",
+        "seg2": "",
+        "diff": false,
+        "className": "",
+        "x": 380,
+        "y": 380,
+        "wires": []
+    },
+    {
+        "id": "b797e67284e77f17",
+        "type": "ui_chart",
+        "z": "e203cefce8c3b070",
+        "name": "",
+        "group": "ad954e2854652855",
+        "order": 2,
+        "width": 0,
+        "height": 0,
+        "label": "Humidity",
+        "chartType": "line",
+        "legend": "false",
+        "xformat": "HH:mm:ss",
+        "interpolate": "linear",
+        "nodata": "",
+        "dot": false,
+        "ymin": "0",
+        "ymax": "100",
+        "removeOlder": 1,
+        "removeOlderPoints": "",
+        "removeOlderUnit": "3600",
+        "cutout": 0,
+        "useOneColor": false,
+        "useUTC": false,
+        "colors": [
+            "#1f77b4",
+            "#aec7e8",
+            "#ff7f0e",
+            "#2ca02c",
+            "#98df8a",
+            "#d62728",
+            "#ff9896",
+            "#9467bd",
+            "#c5b0d5"
+        ],
+        "outputs": 1,
+        "useDifferentColor": false,
+        "className": "",
+        "x": 380,
+        "y": 460,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "a1fad584cbee4ba0",
+        "type": "ui_gauge",
+        "z": "e203cefce8c3b070",
+        "name": "",
+        "group": "d28861352b62a5e5",
+        "order": 1,
+        "width": 0,
+        "height": 0,
+        "gtype": "gage",
+        "title": "Pressure",
+        "label": "hPa",
+        "format": "{{value}}",
+        "min": 0,
+        "max": "2000",
+        "colors": [
+            "#00b500",
+            "#e6e600",
+            "#ca3838"
+        ],
+        "seg1": "",
+        "seg2": "",
+        "diff": false,
+        "className": "",
+        "x": 860,
+        "y": 400,
+        "wires": []
+    },
+    {
+        "id": "ef313139b14a05b8",
+        "type": "ui_chart",
+        "z": "e203cefce8c3b070",
+        "name": "",
+        "group": "d28861352b62a5e5",
+        "order": 2,
+        "width": 0,
+        "height": 0,
+        "label": "Pressure",
+        "chartType": "line",
+        "legend": "false",
+        "xformat": "HH:mm:ss",
+        "interpolate": "linear",
+        "nodata": "",
+        "dot": false,
+        "ymin": "0",
+        "ymax": "2000",
+        "removeOlder": 1,
+        "removeOlderPoints": "",
+        "removeOlderUnit": "3600",
+        "cutout": 0,
+        "useOneColor": false,
+        "useUTC": false,
+        "colors": [
+            "#1f77b4",
+            "#aec7e8",
+            "#ff7f0e",
+            "#2ca02c",
+            "#98df8a",
+            "#d62728",
+            "#ff9896",
+            "#9467bd",
+            "#c5b0d5"
+        ],
+        "outputs": 1,
+        "useDifferentColor": false,
+        "className": "",
+        "x": 860,
+        "y": 460,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "14c7c457c3892266",
+        "type": "ui_text",
+        "z": "e203cefce8c3b070",
+        "group": "25f7a37bab43aa63",
+        "order": 0,
+        "width": 0,
+        "height": 0,
+        "name": "",
+        "label": "AQI predict :",
+        "format": "{{msg.payload}}",
+        "layout": "row-center",
+        "className": "",
+        "style": true,
+        "font": "Times New Roman,Times,serif",
+        "fontSize": "30",
+        "color": "#000000",
+        "x": 650,
+        "y": 860,
+        "wires": []
+    },
+    {
+        "id": "08289d4235991320",
+        "type": "ui_chart",
+        "z": "e203cefce8c3b070",
+        "name": "",
+        "group": "25f7a37bab43aa63",
+        "order": 1,
+        "width": 0,
+        "height": 0,
+        "label": "AQI predict",
+        "chartType": "line",
+        "legend": "false",
+        "xformat": "HH:mm:ss",
+        "interpolate": "linear",
+        "nodata": "",
+        "dot": false,
+        "ymin": "",
+        "ymax": "",
+        "removeOlder": 1,
+        "removeOlderPoints": "",
+        "removeOlderUnit": "3600",
+        "cutout": 0,
+        "useOneColor": false,
+        "useUTC": false,
+        "colors": [
+            "#1f77b4",
+            "#aec7e8",
+            "#ff7f0e",
+            "#2ca02c",
+            "#98df8a",
+            "#d62728",
+            "#ff9896",
+            "#9467bd",
+            "#c5b0d5"
+        ],
+        "outputs": 1,
+        "useDifferentColor": false,
+        "className": "",
+        "x": 650,
+        "y": 900,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "281976c460466359",
+        "type": "mqtt in",
+        "z": "e203cefce8c3b070",
+        "name": "",
+        "topic": "airmonitoring/aqi_cal",
+        "qos": "1",
+        "datatype": "auto-detect",
+        "broker": "0b33094fb085500a",
+        "nl": false,
+        "rap": true,
+        "rh": 0,
+        "inputs": 0,
+        "x": 130,
+        "y": 760,
+        "wires": [
+            [
+                "5140ed334f5d2d3c",
+                "55223876a2a70b14",
+                "9bc1d541e2545f9d"
+            ]
+        ]
+    },
+    {
+        "id": "5140ed334f5d2d3c",
+        "type": "ui_text",
+        "z": "e203cefce8c3b070",
+        "group": "d33b9d69f65462e8",
+        "order": 0,
+        "width": 0,
+        "height": 0,
+        "name": "",
+        "label": "AQI_now:",
+        "format": "{{msg.payload}}",
+        "layout": "row-center",
+        "className": "",
+        "style": true,
+        "font": "Times New Roman,Times,serif",
+        "fontSize": "30",
+        "color": "#000000",
+        "x": 360,
+        "y": 760,
+        "wires": []
+    },
+    {
+        "id": "55223876a2a70b14",
+        "type": "ui_chart",
+        "z": "e203cefce8c3b070",
+        "name": "",
+        "group": "d33b9d69f65462e8",
+        "order": 1,
+        "width": 0,
+        "height": 0,
+        "label": "AQI_now",
+        "chartType": "line",
+        "legend": "false",
+        "xformat": "HH:mm:ss",
+        "interpolate": "linear",
+        "nodata": "",
+        "dot": false,
+        "ymin": "",
+        "ymax": "",
+        "removeOlder": 1,
+        "removeOlderPoints": "",
+        "removeOlderUnit": "3600",
+        "cutout": 0,
+        "useOneColor": false,
+        "useUTC": false,
+        "colors": [
+            "#1f77b4",
+            "#aec7e8",
+            "#ff7f0e",
+            "#2ca02c",
+            "#98df8a",
+            "#d62728",
+            "#ff9896",
+            "#9467bd",
+            "#c5b0d5"
+        ],
+        "outputs": 1,
+        "useDifferentColor": false,
+        "className": "",
+        "x": 360,
+        "y": 820,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "9bc1d541e2545f9d",
+        "type": "function",
+        "z": "e203cefce8c3b070",
+        "name": "function 2",
+        "func": "// Function Node: Prepare AQI Status Card Data\n\n// Nhận giá trị AQI từ topic airmonitoring/aqi_cal\nconst aqi = parseInt(msg.payload); \n\n// Khởi tạo biến mặc định\nlet status_text = \"Chờ dữ liệu\";\nlet bg_color = \"#999999\"; \nlet text_color = \"white\"; \nlet dominant_pollutant = \"PM2.5\"; // Giả định PM2.5 là chất ô nhiễm chính\nlet dominant_value = \"0 µg/m³\"; \n\nif (isNaN(aqi)) {\n    // Trả về nếu dữ liệu không phải là số\n    return null;\n}\n\n// --- Phân loại Trạng thái và Màu nền (Theo tiêu chuẩn AQI Mỹ) ---\n\nif (aqi <= 50) {\n    status_text = \"Tốt\";\n    bg_color = \"#00e400\"; // Xanh lá\n    dominant_value = (aqi * 0.4).toFixed(1) + \" µg/m³\"; \n} else if (aqi <= 100) {\n    status_text = \"Trung bình\";\n    bg_color = \"#ffff00\"; // Vàng\n    text_color = \"black\"; // Chữ đen trên nền vàng\n    dominant_value = (aqi * 0.5).toFixed(1) + \" µg/m³\"; \n} else if (aqi <= 150) {\n    status_text = \"Kém\";\n    bg_color = \"#ff7e00\"; // Cam\n    dominant_value = (aqi * 0.53).toFixed(1) + \" µg/m³\"; \n} else if (aqi <= 200) {\n    status_text = \"Không lành mạnh\"; \n    bg_color = \"#ff0000\"; // Đỏ (Giống hình mẫu)\n    dominant_value = (aqi * 0.59).toFixed(1) + \" µg/m³\"; // Gần với 113 µg/m³\n} else if (aqi <= 300) {\n    status_text = \"Rất không lành mạnh\";\n    bg_color = \"#8f3f97\"; // Tím\n    dominant_value = (aqi * 0.6).toFixed(1) + \" µg/m³\"; \n} else {\n    status_text = \"Nguy hiểm\";\n    bg_color = \"#7e0023\"; // Đỏ đô\n    dominant_value = (aqi * 0.7).toFixed(1) + \" µg/m³\"; \n}\n\n// Gán kết quả vào msg\nmsg.status_text = status_text;\nmsg.bg_color = bg_color;\nmsg.text_color = text_color;\nmsg.dominant_pollutant = dominant_pollutant;\nmsg.dominant_value = dominant_value; // Sử dụng giá trị PM2.5 đã giả định\n\n// msg.payload vẫn giữ là chỉ số AQI ban đầu\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 360,
+        "y": 720,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "4b0aa75bd26a3a70",
+        "type": "mqtt in",
+        "z": "e203cefce8c3b070",
+        "name": "",
+        "topic": "airmonitoring/aqi_cal",
+        "qos": "1",
+        "datatype": "auto-detect",
+        "broker": "0b33094fb085500a",
+        "nl": false,
+        "rap": true,
+        "rh": 0,
+        "inputs": 0,
+        "x": 170,
+        "y": 1200,
+        "wires": [
+            [
+                "b23e522ee6382f6f"
+            ]
+        ]
+    },
+    {
+        "id": "a48cef426352051f",
+        "type": "mqtt in",
+        "z": "e203cefce8c3b070",
+        "name": "",
+        "topic": "airmonitoring/iaq",
+        "qos": "1",
+        "datatype": "auto-detect",
+        "broker": "0b33094fb085500a",
+        "nl": false,
+        "rap": true,
+        "rh": 0,
+        "inputs": 0,
+        "x": 140,
+        "y": 940,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "985000456fcd38fd",
+        "type": "mqtt in",
+        "z": "e203cefce8c3b070",
+        "name": "",
+        "topic": "airmonitoring/gps_location",
+        "qos": "1",
+        "datatype": "json",
+        "broker": "0b33094fb085500a",
+        "nl": false,
+        "rap": true,
+        "rh": 0,
+        "inputs": 0,
+        "x": 210,
+        "y": 1320,
+        "wires": [
+            [
+                "8038a093ea7cf05c"
+            ]
+        ]
+    },
+    {
+        "id": "8038a093ea7cf05c",
+        "type": "function",
+        "z": "e203cefce8c3b070",
+        "name": "function 3",
+        "func": "// msg.payload lúc này là { \"lat\": <value>, \"lon\": <value> }\n\n// Định dạng lại cho Worldmap\nmsg.payload.name = \"Air Monitor Location\";\nmsg.payload.popup = \"Lat: \" + msg.payload.lat.toFixed(6) + \", Lon: \" + msg.payload.lon.toFixed(6);\nmsg.payload.layer = \"AirQualityTrackers\";\nmsg.payload.icon = \"air\"; // Hoặc icon nào bạn muốn\nmsg._track = \"air_monitor_1\"; // Giúp marker cập nhật thay vì tạo mới\n\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 420,
+        "y": 1320,
+        "wires": [
+            [
+                "7e7a91f81127b0c0"
+            ]
+        ]
+    },
+    {
+        "id": "7e7a91f81127b0c0",
+        "type": "worldmap",
+        "z": "e203cefce8c3b070",
+        "name": "",
+        "lat": "",
+        "lon": "",
+        "zoom": "",
+        "layer": "EsriC",
+        "cluster": "",
+        "maxage": "",
+        "usermenu": "show",
+        "layers": "show",
+        "panit": "false",
+        "panlock": "false",
+        "zoomlock": "false",
+        "hiderightclick": "false",
+        "coords": "none",
+        "showgrid": "false",
+        "showruler": "false",
+        "allowFileDrop": "false",
+        "path": "/worldmap",
+        "overlist": "DR,CO,RA,DN",
+        "maplist": "OSMG,OSMC,EsriC,EsriS,UKOS",
+        "mapname": "",
+        "mapurl": "",
+        "mapopt": "",
+        "mapwms": false,
+        "x": 580,
+        "y": 1320,
+        "wires": []
+    },
+    {
+        "id": "551c736f7ded9086",
+        "type": "ui_template",
+        "z": "e203cefce8c3b070",
+        "group": "25c46b65a85683a8",
+        "name": "",
+        "order": 0,
+        "width": "6",
+        "height": "10",
+        "format": "<div id=\"iaqCard\" style=\"\n    width:100%;\n    height:100%;\n    display:flex;\n    flex-direction:column;\n    justify-content:center;\n    align-items:center;\n    padding:1vw;\n    box-sizing:border-box;\n    transition: background-color 0.8s ease;\n\">\n\n    <div id=\"iaqValue\" style=\"\n        font-size:4vw;\n        font-weight:700;\n        margin-bottom:0.5vw;\n    \">--</div>\n\n    <div id=\"iaqEmoji\" style=\"\n        font-size:6vw;\n    \">🙂</div>\n\n    <div id=\"iaqDesc\" style=\"\n        font-size:1.3vw;\n        opacity:0.7;\n        margin-top:0.5vw;\n    \">Waiting...</div>\n</div>\n\n<script>\n(function(scope) {\n\n    // IAQ màu (BSEC scale)\n    function getIAQColor(iaq) {\n        if (iaq <= 50)  return \"#7cd347\"; \n        if (iaq <= 100) return \"#fbd850\"; \n        if (iaq <= 150) return \"#ff8c3c\"; \n        if (iaq <= 200) return \"#ff4545\"; \n        if (iaq <= 300) return \"#96329e\"; \n        return \"#6c081e\";\n    }\n\n    // Emoji cho IAQ\n    function getIAQEmoji(iaq) {\n        if (iaq <= 50)  return \"😄\";\n        if (iaq <= 100) return \"🙂\";\n        if (iaq <= 150) return \"😐\";\n        if (iaq <= 200) return \"😷\";\n        if (iaq <= 300) return \"🤢\";\n        return \"☠️\";\n    }\n\n    // Mô tả IAQ\n    function getIAQDesc(iaq) {\n        if (iaq <= 50)  return \"Excellent Air\";\n        if (iaq <= 100) return \"Good Air\";\n        if (iaq <= 150) return \"Lightly Polluted\";\n        if (iaq <= 200) return \"Moderately Polluted\";\n        if (iaq <= 300) return \"Heavily Polluted\";\n        return \"Severely Polluted\";\n    }\n\n    // Lắng nghe msg từ topic iaq\n    scope.$watch('msg', function(msg) {\n        if (!msg || msg.topic !== \"airmonitoring/iaq\") return;\n        if (!msg.payload) return;\n\n        let iaq = Number(msg.payload);\n\n        const card = document.getElementById(\"iaqCard\");\n        const color = getIAQColor(iaq);\n\n        card.style.backgroundColor = color;\n        card.style.color = (iaq > 200) ? 'white' : 'black';\n\n        document.getElementById(\"iaqValue\").innerHTML = iaq.toFixed(1);\n        document.getElementById(\"iaqEmoji\").innerHTML = getIAQEmoji(iaq);\n        document.getElementById(\"iaqDesc\").innerHTML = getIAQDesc(iaq);\n    });\n\n})(scope);\n</script>\n",
+        "storeOutMessages": true,
+        "fwdInMessages": true,
+        "resendOnRefresh": true,
+        "templateScope": "local",
+        "className": "",
+        "x": 340,
+        "y": 540,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "b07c604349827d98",
+        "type": "ui_template",
+        "z": "e203cefce8c3b070",
+        "group": "4b65706c5618c7b0",
+        "name": "",
+        "order": 0,
+        "width": "6",
+        "height": "10",
+        "format": "<div id=\"aqiPredCard\" style=\"\n    width:100%;\n    height:100%;\n    display:flex;\n    flex-direction:column;\n    justify-content:center;\n    align-items:center;\n    padding:1vw;\n    box-sizing:border-box;\n    transition: background-color 0.8s ease;\n\">\n\n    <div id=\"aqiPredValue\" style=\"\n        font-size:4vw;\n        font-weight:700;\n        margin-bottom:0.5vw;\n    \">--</div>\n\n    <div id=\"aqiPredEmoji\" style=\"\n        font-size:6vw;\n    \">🙂</div>\n\n    <div id=\"aqiPredDesc\" style=\"\n        font-size:1.3vw;\n        opacity:0.7;\n        margin-top:0.5vw;\n    \">Waiting...</div>\n</div>\n\n<script>\n(function(scope) {\n\n    // Màu theo AQI\n    function getAQIColor(aqi) {\n        if (aqi <= 50)  return \"#7cd347\";\n        if (aqi <= 100) return \"#fbd850\";\n        if (aqi <= 150) return \"#ff8c3c\";\n        if (aqi <= 200) return \"#ff4545\";\n        if (aqi <= 300) return \"#96329e\";\n        return \"#6c081e\";\n    }\n\n    // Emoji dựa theo AQI\n    function getAQIEmoji(aqi) {\n        if (aqi <= 50)  return \"😄\";\n        if (aqi <= 100) return \"🙂\";\n        if (aqi <= 150) return \"😐\";\n        if (aqi <= 200) return \"😷\";\n        if (aqi <= 300) return \"😫\";\n        return \"☠️\";\n    }\n\n    // Mô tả\n    function getAQIDesc(aqi) {\n        if (aqi <= 50)  return \"Good\";\n        if (aqi <= 100) return \"Moderate\";\n        if (aqi <= 150) return \"Unhealthy for Sensitive Groups\";\n        if (aqi <= 200) return \"Unhealthy\";\n        if (aqi <= 300) return \"Very Unhealthy\";\n        return \"Severely Polluted\";\n    }\n\n    scope.$watch('msg', function(msg) {\n        if (!msg || msg.topic !== \"aqi/predicted\") return;\n        if (!msg.payload) return;\n\n        let aqiPred = Number(msg.payload);\n\n        const card = document.getElementById(\"aqiPredCard\");\n        const color = getAQIColor(aqiPred);\n\n        card.style.backgroundColor = color;\n        card.style.color = (aqiPred > 200) ? \"white\" : \"black\";\n\n        document.getElementById(\"aqiPredValue\").innerHTML = aqiPred.toFixed(1);\n        document.getElementById(\"aqiPredEmoji\").innerHTML = getAQIEmoji(aqiPred);\n        document.getElementById(\"aqiPredDesc\").innerHTML = getAQIDesc(aqiPred);\n    });\n\n})(scope);\n</script>\n",
+        "storeOutMessages": true,
+        "fwdInMessages": true,
+        "resendOnRefresh": true,
+        "templateScope": "local",
+        "className": "",
+        "x": 640,
+        "y": 960,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "b23e522ee6382f6f",
+        "type": "ui_template",
+        "z": "e203cefce8c3b070",
+        "group": "badf941426905123",
+        "name": "",
+        "order": 1,
+        "width": "10",
+        "height": "10",
+        "format": "<div id=\"airCard\" style=\"\n    width:100%; height:100%;\n    display:flex; flex-direction:column;\n    border-radius:1vw;\n    overflow:hidden;\n    box-shadow:0 0.3vw 1vw rgba(0,0,0,0.15);\n    transition:background-color 0.5s ease;\n    font-family:Arial, sans-serif;\n\">\n\n    <!-- TOP AREA -->\n    <div id=\"airTop\" style=\"\n        padding:1.2vw;\n        color:white;\n        display:flex;\n        flex-direction:column;\n    \">\n        <div style=\"display:flex; justify-content:space-between; align-items:center;\">\n\n            <div>\n                <div id=\"aqiValue\" style=\"font-size:3vw; font-weight:700;\">--</div>\n                <div id=\"aqiLabel\" style=\"font-size:1.2vw; opacity:0.8;\">US AQI</div>\n            </div>\n\n            <div id=\"aqiEmoji\" style=\"font-size:4vw;\">😷</div>\n        </div>\n\n        <div id=\"aqiText\" style=\"margin-top:0.5vw; font-size:1.5vw; font-weight:600;\">\n            Loading...\n        </div>\n\n        <hr style=\"margin:1vw 0; border:none; border-top:0.15vw solid rgba(255,255,255,0.4);\">\n\n        <div style=\"display:flex; justify-content:space-between; font-size:1.2vw;\">\n            <div>Main pollutant: <b>PM2.5</b></div>\n            <div id=\"pm25Value\">-- μg/m³</div>\n        </div>\n    </div>\n\n    <!-- BOTTOM AREA (transparent để lấy màu nền AQI) -->\n    <div id=\"airBottom\" style=\"padding:1vw; display:flex; justify-content:space-around; color:white;\">\n\n        <div style=\"display:flex; align-items:center; font-size:2vw;\">\n            ⛅ <span id=\"tempValue\" style=\"margin-left:0.5vw;\">--°</span>\n        </div>\n\n        <div style=\"display:flex; align-items:center; font-size:2vw;\">\n            🧭 <span id=\"windValue\" style=\"margin-left:0.5vw;\">-- km/h</span>\n        </div>\n\n        <div style=\"display:flex; align-items:center; font-size:2vw;\">\n            💧 <span id=\"humidValue\" style=\"margin-left:0.5vw;\">-- %</span>\n        </div>\n\n    </div>\n</div>\n\n<script>\n(function(scope){\n\n    // AQI → Color mapping\n    function getAQIColor(aqi){\n        if (aqi <= 50) return \"#7cd347\";\n        if (aqi <= 100) return \"#fbd850\";\n        if (aqi <= 150) return \"#ff8c3c\";\n        if (aqi <= 200) return \"#ff4545\";\n        if (aqi <= 300) return \"#96329e\";\n        return \"#6c081e\";\n    }\n\n    // AQI → Text\n    function getAQIText(aqi){\n        if (aqi <= 50) return \"Good\";\n        if (aqi <= 100) return \"Moderate\";\n        if (aqi <= 150) return \"Unhealthy for sensitive groups\";\n        if (aqi <= 200) return \"Unhealthy\";\n        if (aqi <= 300) return \"Very Unhealthy\";\n        return \"Hazardous\";\n    }\n\n    // AQI → Emoji\n    function getAQIEmoji(aqi){\n        if (aqi <= 50) return \"😊\";\n        if (aqi <= 100) return \"🙂\";\n        if (aqi <= 150) return \"😷\";\n        if (aqi <= 200) return \"🤒\";\n        if (aqi <= 300) return \"😫\";\n        return \"☠️\";\n    }\n\n    scope.$watch('msg', function(msg){\n        if (!msg) return;\n\n        // ----- Mapping topic -----\n        if (msg.topic === \"airmonitoring/aqi_cal\")\n            scope.aqi = Number(msg.payload);\n\n        if (msg.topic === \"airmonitoring/pm25\")\n            scope.pm25 = Number(msg.payload);\n\n        if (msg.topic === \"airmonitoring/temperature\")\n            scope.temp = Number(msg.payload);\n\n        if (msg.topic === \"airmonitoring/humidity\")\n            scope.humid = Number(msg.payload);\n\n        if (msg.topic === \"internal/wind_speed\")\n            scope.wind = Number(msg.payload);\n        // ------------------------------------\n\n        // Update UI\n        // Update UI\n    if (scope.aqi !== undefined){\n\n        let color = getAQIColor(scope.aqi);\n\n        document.getElementById(\"aqiValue\").innerHTML = scope.aqi;\n        document.getElementById(\"aqiText\").innerHTML = getAQIText(scope.aqi);\n\n        // đổi nền toàn card\n        document.getElementById(\"airCard\").style.backgroundColor = color;\n\n        // ⭐ CẬP NHẬT ICON AQI ⭐\n        document.getElementById(\"aqiEmoji\").innerHTML = getAQIEmoji(scope.aqi);\n\n        // Tự đổi màu chữ\n        let textColor = (scope.aqi > 120) ? \"white\" : \"black\";\n        document.getElementById(\"airTop\").style.color = textColor;\n        document.getElementById(\"airBottom\").style.color = textColor;\n    }\n\n\n        if (scope.pm25 !== undefined)\n            document.getElementById(\"pm25Value\").innerHTML = scope.pm25 + \" µg/m³\";\n\n        if (scope.temp !== undefined)\n            document.getElementById(\"tempValue\").innerHTML = scope.temp.toFixed(1) + \"°\";\n\n        if (scope.wind !== undefined)\n            document.getElementById(\"windValue\").innerHTML = scope.wind.toFixed(1) + \" km/h\";\n\n        if (scope.humid !== undefined)\n            document.getElementById(\"humidValue\").innerHTML = scope.humid.toFixed(0) + \" %\";\n    });\n\n})(scope);\n</script>\n",
+        "storeOutMessages": true,
+        "fwdInMessages": true,
+        "resendOnRefresh": true,
+        "templateScope": "local",
+        "className": "",
+        "x": 440,
+        "y": 1160,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "b774cac1bf7367de",
+        "type": "mqtt in",
+        "z": "e203cefce8c3b070",
+        "name": "",
+        "topic": "airmonitoring/pm25",
+        "qos": "1",
+        "datatype": "auto-detect",
+        "broker": "0b33094fb085500a",
+        "nl": false,
+        "rap": true,
+        "rh": 0,
+        "inputs": 0,
+        "x": 170,
+        "y": 1160,
+        "wires": [
+            [
+                "b23e522ee6382f6f"
+            ]
+        ]
+    },
+    {
+        "id": "ab3524371eb6aae6",
+        "type": "mqtt in",
+        "z": "e203cefce8c3b070",
+        "name": "",
+        "topic": "airmonitoring/temperature",
+        "qos": "1",
+        "datatype": "auto-detect",
+        "broker": "0b33094fb085500a",
+        "nl": false,
+        "rap": true,
+        "rh": 0,
+        "inputs": 0,
+        "x": 190,
+        "y": 1120,
+        "wires": [
+            [
+                "b23e522ee6382f6f"
+            ]
+        ]
+    },
+    {
+        "id": "5508c32eca751b18",
+        "type": "mqtt in",
+        "z": "e203cefce8c3b070",
+        "name": "",
+        "topic": "airmonitoring/humidity",
+        "qos": "1",
+        "datatype": "auto-detect",
+        "broker": "0b33094fb085500a",
+        "nl": false,
+        "rap": true,
+        "rh": 0,
+        "inputs": 0,
+        "x": 180,
+        "y": 1080,
+        "wires": [
+            [
+                "b23e522ee6382f6f"
+            ]
+        ]
+    },
+    {
+        "id": "d30f0ac938b4d1d4",
+        "type": "ui_template",
+        "z": "e203cefce8c3b070",
+        "group": "bec4509481718ea7",
+        "name": "",
+        "order": 2,
+        "width": "20",
+        "height": "10",
+        "format": "<style>\n/* 1. CONTAINER CHÍNH - Sử dụng Flexbox để đặt ảnh và nút cạnh nhau */\n.container {\n    display: flex;\n    /* Căn chỉnh nội dung theo chiều dọc, bắt đầu từ trên xuống */\n    align-items: flex-start; \n    /* Giãn cách giữa ảnh và nút */\n    justify-content: space-between; \n    width: 100%;\n    height: 100%;\n    padding: 10px; \n    box-sizing: border-box;\n    overflow: hidden;\n}\n\n/* 2. KHU VỰC ẢNH */\n.air-image-area {\n    /* Cho ảnh chiếm phần lớn không gian còn lại (ví dụ 75%) */\n    flex-basis: 75%; \n    display: flex;\n    justify-content: center;\n    align-items: center;\n    height: 100%; /* Giúp ảnh co giãn theo chiều cao group */\n    padding-right: 15px; /* Tạo khoảng trống giữa ảnh và nút */\n}\n\n/* Ảnh máy lọc chiếm tối đa và co giãn để vừa với khu vực ảnh */\n.air-image {\n    max-width: 100%; /* Đảm bảo ảnh không vượt quá khu vực của nó */\n    max-height: 100%; /* Đảm bảo ảnh co giãn theo chiều cao group */\n    width: auto;\n    height: auto;\n    border-radius: 12px;\n    object-fit: contain;\n    box-shadow: 0 0 12px rgba(0,0,0,0.2);\n}\n\n/* 3. KHU VỰC NÚT (Được đẩy sang phải) */\n.button-area {\n    /* Cho nút chiếm phần còn lại (ví dụ 25%) */\n    flex-basis: 25%; \n    display: flex;\n    flex-direction: column; /* Đảm bảo nút nằm trên trục dọc */\n    justify-content: center; /* Căn nút vào giữa theo chiều dọc của group */\n    align-items: center; /* Căn nút vào giữa theo chiều ngang của khu vực nút */\n    height: 100%;\n}\n\n.button-toggle {\n    width: 120px;\n    padding: 15px;\n    font-size: 20px;\n    color: white;\n    border: none;\n    border-radius: 12px;\n    cursor: pointer;\n    transition: 0.3s ease;\n    text-align: center;\n    box-shadow: 0 4px 6px rgba(0,0,0,0.3);\n}\n\n.button-on {\n    background-color: #28a745;\n}\n\n.button-off {\n    background-color: #dc3545;\n}\n\n/* 4. MEDIA QUERY: Xếp chồng lên nhau khi màn hình nhỏ */\n@media (max-width: 600px) {\n    .container {\n        flex-direction: column; /* Xếp ảnh lên trên, nút xuống dưới */\n        align-items: center;\n    }\n    \n    .air-image-area, .button-area {\n        flex-basis: auto; /* Tự động co giãn */\n        width: 100%;\n        padding-right: 0;\n        height: auto;\n        margin-bottom: 20px; /* Khoảng cách giữa ảnh và nút */\n    }\n}\n</style>\n\n<div class=\"container\">\n    <div class=\"air-image-area\">\n        <img class=\"air-image\" src=\"https://images-na.ssl-images-amazon.com/images/I/714TjtxQJSL.jpg\" alt=\"Air Filter\">\n    </div>\n\n    <div class=\"button-area\">\n        <button id=\"airBtn\" class=\"button-toggle button-off\" ng-click=\"toggleAir()\">\n            OFF\n        </button>\n    </div>\n</div>\n\n<script>\n(function(scope) {\n\n    scope.airState = false;  // false = OFF, true = ON\n\n    scope.toggleAir = function() {\n        scope.airState = !scope.airState;\n\n        const btn = document.getElementById(\"airBtn\");\n\n        if (scope.airState) {\n            btn.innerHTML = \"ON\";\n            btn.classList.remove(\"button-off\");\n            btn.classList.add(\"button-on\");\n\n            // Gửi payload ON ra MQTT\n            scope.send({ payload: \"ON\" });\n        } else {\n            btn.innerHTML = \"OFF\";\n            btn.classList.remove(\"button-on\");\n            btn.classList.add(\"button-off\");\n\n            // Gửi payload OFF ra MQTT\n            scope.send({ payload: \"OFF\" });\n        }\n    };\n\n})(scope);\n</script>",
+        "storeOutMessages": true,
+        "fwdInMessages": true,
+        "resendOnRefresh": true,
+        "templateScope": "local",
+        "className": "",
+        "x": 580,
+        "y": 1060,
+        "wires": [
+            [
+                "72dc51fde3d31e85"
+            ]
+        ]
+    },
+    {
+        "id": "8fd7d90c7c4af56b",
+        "type": "ui_chart",
+        "z": "e203cefce8c3b070",
+        "name": "",
+        "group": "7c679d9eb8fb1b5c",
+        "order": 1,
+        "width": 0,
+        "height": 0,
+        "label": "IAQ",
+        "chartType": "line",
+        "legend": "false",
+        "xformat": "HH:mm:ss",
+        "interpolate": "linear",
+        "nodata": "",
+        "dot": false,
+        "ymin": "",
+        "ymax": "",
+        "removeOlder": 1,
+        "removeOlderPoints": "",
+        "removeOlderUnit": "3600",
+        "cutout": 0,
+        "useOneColor": false,
+        "useUTC": false,
+        "colors": [
+            "#1f77b4",
+            "#aec7e8",
+            "#ff7f0e",
+            "#2ca02c",
+            "#98df8a",
+            "#d62728",
+            "#ff9896",
+            "#9467bd",
+            "#c5b0d5"
+        ],
+        "outputs": 1,
+        "useDifferentColor": false,
+        "className": "",
+        "x": 330,
+        "y": 660,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "8fd0fbc452b0a9c1",
+        "type": "global-config",
+        "env": [],
+        "modules": {
+            "node-red-dashboard": "3.6.6",
+            "node-red-contrib-web-worldmap": "5.5.4"
+        }
+    }
+]
