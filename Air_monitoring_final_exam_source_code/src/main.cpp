@@ -9,11 +9,10 @@
 
 #include "secrets/mqtt.h"
 #include "ca_cert_emqx.h"
-
-// ===== PMS ====================
+// PMS
 #include <Adafruit_PM25AQI.h>
 
-// ===== BME680 + BSEC ==========
+// BME+Bsec
 #include <Wire.h>
 #include "bsec.h"
 
@@ -25,10 +24,12 @@
 #include <Adafruit_GFX.h>
 #include <Adafruit_SSD1306.h>
 
+//Pins + topics
 #include "config/pins.h"
 #include "config/topics.h"
 
-// ======================================
+
+// init
 
 WiFiClientSecure tlsClient;
 PubSubClient mqttClient(tlsClient);
@@ -43,28 +44,26 @@ Bsec iaqSensor;
 // OLED
 Adafruit_SSD1306 display(SCREEN_WIDTH, SCREEN_HEIGHT, &I2CBUS, -1);
 
+// GPS
 HardwareSerial SerialGPS(2); // Sử dụng UART 2
 TinyGPSPlus gps;
 // Create a mutex
 SemaphoreHandle_t mqttMutex;
 
-// =========================================================
 //                     MQTT CALLBACK
-// =========================================================
+
 void mqttCallback(char* topic, byte* payload, unsigned int length)
 {
     if (strcmp(topic, air_filter_topic) == 0)
     {
         char buf[length + 1];
         memcpy(buf, payload, length);
-        buf[length] = '\0'; // chuyển payload thành chuỗi
+        buf[length] = '\0'; // convert payload to String
 
         Serial.printf("Received on topic %s: %s\n", topic, buf);
 
-        // ------------------------
-        // XỬ LÝ BẬT TẮT LED
-        // ------------------------
-        if (strcasecmp(buf, "ON") == 0)       // Không phân biệt hoa/thường
+        // Handling air turn on/off
+        if (strcasecmp(buf, "ON") == 0)      
         {
             digitalWrite(LED_PIN, HIGH);
             Serial.println("LED TURNED ON");
@@ -82,10 +81,8 @@ void mqttCallback(char* topic, byte* payload, unsigned int length)
 }
 
 
+//                Send JSON for AI Model
 
-// =========================================================
-//                 GỬI JSON CHO MÔ HÌNH AI
-// =========================================================
 void publishAIData(int pm25, int pm10, float pressure, float temp, float humid)
 {
     StaticJsonDocument<200> doc;
@@ -105,9 +102,7 @@ void publishAIData(int pm25, int pm10, float pressure, float temp, float humid)
 }
 
 
-// =========================================================
-//              TÍNH AQI CHUẨN VIỆT NAM (TCVN)
-// =========================================================
+//              Calculate AQI
 
 typedef struct {
     int Il;
@@ -154,13 +149,11 @@ int calcAQI(float C, AQITable* table, int size)
         }
     }
 
-    return 500; // vượt max
+    return 500; 
 }
 
 
-// =========================================================
 //                       PMS TASK
-// =========================================================
 // Global veriable
 int lastPM25 = 0;
 int lastPM10 = 0;
@@ -195,7 +188,6 @@ void pmsTask(void *param)
 
             aqi_final = max(aqi_pm25, aqi_pm10);
 
-            // Đã đổi topic thành aqi_cal_topic để dễ quản lý
             xSemaphoreTake(mqttMutex, portMAX_DELAY);
              mqttClient.publish(aqi_cal_topic, String(aqi_final).c_str()); 
             xSemaphoreGive(mqttMutex);
@@ -209,9 +201,7 @@ void pmsTask(void *param)
 }
 
 
-// =========================================================
 //                       BME TASK
-// =========================================================
 void bmeTask(void *param)
 {
     for (;;)
@@ -230,7 +220,7 @@ void bmeTask(void *param)
 
         Serial.printf("[BME] IAQ=%.1f  T=%.2f°C  H=%.2f%%  P=%.2f hPa\n",
                       iaq, temp, humid, press);
-        // 
+
         xSemaphoreTake(mqttMutex, portMAX_DELAY);
         mqttClient.publish(iaq_topic,      String(iaq).c_str());
         mqttClient.publish(temp_topic,     String(temp).c_str());
@@ -238,7 +228,7 @@ void bmeTask(void *param)
         mqttClient.publish(pressure_topic, String(press).c_str());
         xSemaphoreGive(mqttMutex);
 
-        // JSON gửi AI
+        // JSON for AI
         publishAIData(lastPM25, lastPM10, press, temp, humid);
 
         vTaskDelay(5000 / portTICK_PERIOD_MS);
@@ -276,21 +266,19 @@ void ledTask(void *param){
             vTaskDelay(200/portTICK_PERIOD_MS);
 }
 
-// =========================================================
 //                       GPS TASK
-// =========================================================
 void gpsTask(void *param)
 {
     Serial.println("[GPS] Task started.");
     for (;;)
     {
-        // Đọc dữ liệu từ Serial2 và decode bằng TinyGPSPlus
+        // Reading data from Serial2 and decode by TinyGPSPlus
         while (SerialGPS.available() > 0)
         {
             gps.encode(SerialGPS.read());
         }
 
-        // Kiểm tra xem vị trí có hợp lệ và đã cập nhật chưa
+        // Checking 
         if (gps.location.isUpdated() && gps.location.isValid())
         {
             float lat = gps.location.lat();
@@ -298,7 +286,7 @@ void gpsTask(void *param)
 
             Serial.printf("[GPS] Lat=%.6f, Lon=%.6f\n", lat, lon);
             
-            // Gửi dữ liệu GPS lên MQTT dưới dạng JSON
+            // Publish data to MQTT
             StaticJsonDocument<100> doc;
             doc["lat"] = lat;
             doc["lon"] = lon;
@@ -315,12 +303,10 @@ void gpsTask(void *param)
             Serial.println("[GPS] Waiting for fix...");
         }
 
-        vTaskDelay(2000 / portTICK_PERIOD_MS); // Cập nhật vị trí mỗi 2 giây
+        vTaskDelay(2000 / portTICK_PERIOD_MS);
     }
 }
-// =========================================================
 //                          SETUP (Cập nhật)
-// =========================================================
 void setup()
 {
     Serial.begin(115200);
@@ -364,7 +350,7 @@ void setup()
     iaqSensor.updateSubscription(sensorList, 4, BSEC_SAMPLE_RATE_LP);
 
     
-    // PMS init (Sử dụng Serial1 - PMS_RX: 32, PMS_TX: 33)
+    // PMS init 
     Serial1.begin(9600, SERIAL_8N1, PMS_RX, PMS_TX);
     if (!aqi.begin_UART(&Serial1))
     {
@@ -373,26 +359,25 @@ void setup()
     }
     Serial.println("PMS5003 OK!");
     
-    // GPS init (Sử dụng Serial2 - GPS_RX: 16, GPS_TX: 17)
+    // GPS init 
     SerialGPS.begin(9600, SERIAL_8N1, GPS_RX, GPS_TX);
     Serial.println("GPS UART2 OK!");
 
 
-    // Khởi tạo các Tasks
+    // Tasks init
     xTaskCreatePinnedToCore(pmsTask, "PMSTask", 4096, NULL, 1, NULL, 1);
     xTaskCreatePinnedToCore(bmeTask, "BMETask", 4096, NULL, 1, NULL, 1);
     xTaskCreatePinnedToCore(gpsTask, "GPSTask", 4096, NULL, 1, NULL, 0);
     xTaskCreatePinnedToCore(oledTask, "OLEDTask",4096, NULL, 1, NULL, 0);
     xTaskCreatePinnedToCore(ledTask, "LEDTask", 2048, NULL, 1, NULL, 1);
 }
-// =========================================================
 //                          LOOP
 // =========================================================
 void loop()
 {
     MQTT::reconnect(
         mqttClient,
-        "esp32-client",
+        "esp32-tiendong",
         EMQX::username,
         EMQX::password,
         mqtt_subscribe_list,
