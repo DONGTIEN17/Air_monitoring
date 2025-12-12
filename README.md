@@ -108,35 +108,51 @@ And here is the model evaluation, showing the performance metrics used to valida
 ![Evaluation](images/Evaluate_index.png)
 
 ## Block Diagram 
+
 1. Block Diagram
+
 ![1. Block Diagram](images/Block_Diagram.png)
-2. Algorithm Flow Chart
+
+4. Algorithm Flow Chart
+
 ![2. Algorithm Flow Chart](images/Algorithm_Flow_Chart.png)
+
 ## Pin Diagram
+
 3. Pin Diagram
+   
 ![3. Pin Diagram](images/Pin_Diagram.png)
 
 ## Result
+
 1. Model:
+
 ![1. Model:](images/Model.jpg)
-2. Node-red dashboard 2.0 :
+
+3. Node-red dashboard 2.0 :
 
 . The Node-red dashboard consists of 7 Tabs: Home, Air Quality Collected, Particulate Matter Indicators, Weather, Air Purifier, Location of Monitor, Another Web.
+
 ![Tabs](images/Tabs.png)
 
 .The Home interface displays AQI, IAQ, Temperature and Humidity and give the thresholds alert.
+
 ![Home](images/Home.png)
 
 . The Particulate Matter Indicators displays 3 types of PM : PM1, PM2.5, PM10 collected that time.
+
 ![PM](images/Particulate_Matter.png)
 
 . The Weather displays Temperature, Humidity, Pressure readings, along with historical data over time.
+
 ![Weather](images/Weather.png)
 
 . The Air Purifier to turn on/off if the air is poluted
+
 ![Air](images/Air_purifier.png)
 
 . The Location of Monitor 
+
 ![GPS](images/GPS.png)
 
 . The Another Web helps people compare the air quality index at their home with other locations.
