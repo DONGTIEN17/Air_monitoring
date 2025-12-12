@@ -8,27 +8,24 @@ import time
 import ssl
 import sys
 
-# ===============================
-#       ĐƯỜNG DẪN MODEL
-# ===============================
+
+#        MODEL PATH
 MODEL_PATH = 'lstm_aqi_model_window_1.h5'
 SCALER_PATH = 'scaler_window_1.pkl'
 
-# ===============================
 #       MQTT CONFIG
-# ===============================
-BROKER_ADDRESS = "ye004827.ala.asia-southeast1.emqxsl.com"
+
+BROKER_ADDRESS = "your_brokeraddress.com"
 PORT = 8883
 CLIENT_ID = "Laptop_AI_Predictor_AQI"
-USERNAME = "tiendong17"
-PASSWORD = "123456"
+USERNAME = "uer_name"
+PASSWORD = "password"
 
 TOPIC_SUBSCRIBE_SENSOR = "airmonitoring/air_data"        
 TOPIC_PUBLISH_AQI = "aqi/predicted"
 
-# ===============================
 #       CA CERT
-# ===============================
+
 CA_CERT_CONTENT = """
 -----BEGIN CERTIFICATE-----
 MIIDjjCCAnagAwIBAgIQAzrx5qcRqaC7KGSxHQn65TANBgkqhkiG9w0BAQsFADBh
@@ -54,18 +51,15 @@ MrY=
 -----END CERTIFICATE-----
 """
 
-# ===============================
 #       LOAD MODEL + SCALER
-# ===============================
+
 try:
     
     custom_objects = {
         'mse': tf.keras.metrics.MeanSquaredError()
     }
     
-    # Tải mô hình sử dụng custom_objects để khắc phục lỗi deserialize
     model = load_model(MODEL_PATH, custom_objects=custom_objects)
-    # --- PHẦN SỬA LỖI KẾT THÚC ---
     
     scaler = joblib.load(SCALER_PATH)
     print("Mô hình và Scaler đã tải thành công!")
@@ -73,14 +67,10 @@ except Exception as e:
     print(" Lỗi tải mô hình:", e)
     sys.exit(1)
 
+#    AQI predict function
 
-# ===============================
-#   HÀM DỰ ĐOÁN AQI
-# ===============================
 def predict_aqi(pm25, pm10, pressure, temp, humid):
 
-    # Tạo vector input theo đúng định dạng scaler (6 biến)
-    # cột 0 = AQI, ta đặt dummy = 0
     raw = np.array([[0, pm25, pm10, pressure, temp, humid]])
 
     # Scale
@@ -92,7 +82,6 @@ def predict_aqi(pm25, pm10, pressure, temp, humid):
     # Predict
     scaled_pred = model.predict(lstm_input, verbose=0)
 
-    # Giải scale (AQI nằm ở cột 0)
     tmp = np.zeros((1, 6))
     tmp[0, 0] = scaled_pred[0, 0]
 
@@ -102,9 +91,7 @@ def predict_aqi(pm25, pm10, pressure, temp, humid):
     return round(aqi_pred, 2)
 
 
-# ===============================
 #           MQTT CALLBACK
-# ===============================
 
 def on_connect(client, userdata, flags, reason, props):
     if reason == 0:
@@ -147,9 +134,7 @@ def on_message(client, userdata, msg):
         print(" Error:", e)
 
 
-# ===============================
 #       MQTT CLIENT CONFIG
-# ===============================
 
 client = mqtt.Client(mqtt.CallbackAPIVersion.VERSION2, client_id=CLIENT_ID)
 client.username_pw_set(USERNAME, PASSWORD)
