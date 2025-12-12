@@ -167,6 +167,8 @@ And here is the model evaluation, showing the performance metrics used to valida
 
   Successfully uses an AI model to predict AQI with high accuracy
 
+  Creates a visual platform that is easy for people to use
+
   Includes a database suitable for various applications
 
 
