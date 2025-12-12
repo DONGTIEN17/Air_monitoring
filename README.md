@@ -3,19 +3,19 @@
 ## Problem Statement
 ### Real-World Demand
 
-In the face of rapid urbanization, air quality has become a significant concern impacting public health. Traditional methods of air monitoring are often insufficient, leading to delayed responses to pollution and hazardous conditions. This highlights the urgent need for an intelligent air monitoring system capable of:
+With rapid urbanization, air pollution has become a critical issue directly affecting public health—especially in densely populated cities like Ha Noi, where smog, vehicle emissions, and industrial activities frequently push air quality to hazardous levels. Traditional air-monitoring methods often fall short, providing delayed or incomplete information. This reality highlights the urgent need for a smart air-monitoring system capable of:
 
-_ Multi-Parameter Monitoring: Continuously tracking crucial environmental indicators such as PM2.5, Temperature, Humidity, Pressure, and VOC levels.
+Multi-Parameter Monitoring: Continuously measuring essential environmental indicators such as PM2.5, temperature, humidity, pressure, and VOC levels.
 
-_ Enhanced Safety Alerts: Automatically detecting and warning of potential risks like high pollution levels, toxic gas leaks, or abnormal temperature changes.
+Enhanced Safety Alerts: Automatically detecting dangerous conditions—high pollution peaks, toxic gas leaks, or abnormal temperature changes—and warning users in real time.
 
-_ Automation and Accessibility: Developing a cost-effective, easy-to-deploy system that makes advanced environmental monitoring accessible to a broader range of users.
+Automation and Accessibility: Offering a low-cost, easy-to-deploy solution that brings advanced environmental monitoring to households, schools, offices, and communities.
 
 ### Inspiration for the Project
 
-Toxic Gas Risks: Incidents of gas leaks and poor air quality in urban areas underscore the importance of automated detection and alerts.
+Toxic Gas Incidents: Urban areas have seen rising risks of gas leaks and poor air quality, demonstrating the importance of real-time automated alerts to protect residents.
 
-Data Stability: Many existing systems struggle with accuracy and real-time data display, making reliable sensors and user-friendly interfaces crucial for better decision-making.
+Data Accuracy Challenges: Many existing monitoring tools suffer from unstable readings and slow updates. This project emphasizes the use of reliable sensors and intuitive interfaces to provide accurate, timely information for better decision-making.
 
 ## Main Content
 ### Hardware Components
@@ -97,10 +97,14 @@ _Users can set thresholds and receive notifications for environmental hazards.
 
 ## AI model
 
-In this project I used LSTM model to predict the AQI in next hours.
+To enhance the accuracy and reliability of air quality forecasting, this project employs an LSTM (Long Short-Term Memory) neural network—an advanced deep-learning model well-suited for time-series prediction. By learning from historical sensor data, the model can predict the Air Quality Index (AQI) several hours ahead, enabling earlier awareness and more proactive responses to pollution.
 
-Here is the compare table between real index and predicted index
+Below is a comparison between the actual AQI values and the model’s predicted results, demonstrating the strong alignment between the two:
+
 ![Here is the compare table between real index and predicted index](images/chart_real_pred.png)
+
+And here is the model evaluation, showing the performance metrics used to validate prediction accuracy:
+
 ![Evaluation](images/Evaluate_index.png)
 
 ## Block Diagram 
