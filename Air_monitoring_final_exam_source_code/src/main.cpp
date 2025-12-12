@@ -29,7 +29,7 @@
 #include "config/topics.h"
 
 
-// init
+// Declare
 
 WiFiClientSecure tlsClient;
 PubSubClient mqttClient(tlsClient);
@@ -152,7 +152,7 @@ int calcAQI(float C, AQITable* table, int size)
     return 500; 
 }
 
-
+//                       Free RTOS
 //                       PMS TASK
 // Global veriable
 int lastPM25 = 0;
@@ -182,7 +182,8 @@ void pmsTask(void *param)
             mqttClient.publish(pm25_topic, String(pm25).c_str());
             mqttClient.publish(pm10_topic, String(pm10).c_str());
             xSemaphoreGive(mqttMutex);
-            // ====================== TÍNH AQI ======================
+            
+            // AQI calculation
             int aqi_pm25 = calcAQI(lastPM25, pm25Table, sizeof(pm25Table)/sizeof(AQITable));
             int aqi_pm10 = calcAQI(lastPM10, pm10Table, sizeof(pm10Table)/sizeof(AQITable));
 
@@ -193,7 +194,6 @@ void pmsTask(void *param)
             xSemaphoreGive(mqttMutex);
             Serial.printf("[AQI] PM2.5_AQI=%d  PM10_AQI=%d  =>  AQI=%d\n",aqi_pm25, aqi_pm10, aqi_final);
 
-        // ======================================================
         }
 
         vTaskDelay(5000 / portTICK_PERIOD_MS);
@@ -306,12 +306,12 @@ void gpsTask(void *param)
         vTaskDelay(2000 / portTICK_PERIOD_MS);
     }
 }
-//                          SETUP (Cập nhật)
+//                          SETUP
 void setup()
 {
     Serial.begin(115200);
     delay(200);
-
+    // LED init
     pinMode(LED_PIN, OUTPUT);
     digitalWrite(LED_PIN, LOW);
     pinMode(LED_Warning, OUTPUT);
@@ -339,7 +339,7 @@ void setup()
     Serial.println("OLED start to use !");
     display.clearDisplay();
 
-
+    // BSEC init
     bsec_virtual_sensor_t sensorList[] = {
     BSEC_OUTPUT_IAQ,
     BSEC_OUTPUT_SENSOR_HEAT_COMPENSATED_TEMPERATURE,
